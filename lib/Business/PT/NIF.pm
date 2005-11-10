@@ -13,7 +13,7 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 require Exporter;
 
@@ -41,18 +41,19 @@ Currently, validation is done only by the control digit, as follows:
 
  1) NIF is matched with /^\d{9}$/ (nine consecutive digits with nothing more)
  2) Control digit (last one, the ninth) is removed and store
- 3) First digit is multiplied by 9, second by 8, third by 7, fourth by 6, fifth by 5, sixth by 4, seventh by 3, eight by 2
+ 3) First digit is multiplied by 9, second by 8, third by 7, fourth by 6, fifth
+    by 5, sixth by 4, seventh by 3, eighth by 2
  4) All the results of the multiplication are summed
  5) Modulo of the sum by 11 is found
  6) Complement of the sum by 11 is found
  7) Control digit is compared to said complement
 
-Example for NIF 136695973
+Example for NIF 136695973:
 
  1) NIF is matched agains /^\d{9}$/, test passes
  2) Control digit is 3 (last digit)
  3) Multiplication: 1*9, 3*8, 6*7, 6*6, 9*5, 5*4, 9*3, 7*2
- 4) Sum of said products is 217
+ 4) Sum: 217
  5) 217 % 11 = 8
  6) 11 - 8 = 3
  7) 3 == 3, test passes
@@ -63,11 +64,8 @@ number is assumed to be 0.
 =cut
 
 sub valid_nif {
-  my $nif = shift or return undef;
-
-  unless ( $nif =~ /^\d{9}$/ ) {
-    return undef;
-  }
+  my $nif =  shift     or return undef;
+     $nif =~ /^\d{9}$/ or return undef;
 
   my $control = chop $nif;
   my $sum;
@@ -124,8 +122,6 @@ L<http://search.cpan.org/dist/Business-PT-NIF>
 =head1 SEE ALSO
 
 http://chemeng.p.lodz.pl/zylla/ut/translation.html#PT
-
-=head1 ACKNOWLEDGEMENTS
 
 =head1 COPYRIGHT & LICENSE
 

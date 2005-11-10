@@ -1,5 +1,9 @@
 Revision history for Business-PT-NIF
 
+0.04  Thu Nov 10 15:55:00 2005
+	- improved the documentation a bit (more coherent with
+	  Business::PT::BI)
+
 0.03  Thu Nov 10 14:40:00 2005
 	- fixed the special rule (it was for complement > 9 after
 	  all; people who write the documentation should have written
