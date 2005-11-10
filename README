@@ -1,4 +1,4 @@
-Business::PT::NIF version 0.02
+Business::PT::NIF version 0.03
 ==============================
 
 =head1 NAME
@@ -44,6 +44,9 @@ Example for NIF 136695973
  5) 217 % 11 = 8
  6) 11 - 8 = 3
  7) 3 == 3, test passes
+
+When the complement (the result of step 6) is greater than 9, the
+number is assumed to be 0.
 
 =head1 AUTHOR
 

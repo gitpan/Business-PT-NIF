@@ -13,7 +13,7 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 require Exporter;
 
@@ -57,6 +57,9 @@ Example for NIF 136695973
  6) 11 - 8 = 3
  7) 3 == 3, test passes
 
+When the complement (the result of step 6) is greater than 9, the
+number is assumed to be 0.
+
 =cut
 
 sub valid_nif {
@@ -72,14 +75,10 @@ sub valid_nif {
     $sum += $_ * chop $nif;
   }
 
-  my $mod = $sum % 11;
+  my $expected = 11 - $sum % 11;
+  if ($expected > 9) { $expected = 0 }
 
-  if ($mod) {
-    return $control == 11 - $sum % 11;
-  }
-  else {
-    return $control == 0;
-  }
+  return $control == $expected;
 }
 
 =head1 AUTHOR
