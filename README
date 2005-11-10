@@ -1,4 +1,4 @@
-Business::PT::NIF version 0.01
+Business::PT::NIF version 0.02
 ==============================
 
 =head1 NAME
@@ -84,6 +84,10 @@ L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Business-PT-NIF>
 L<http://search.cpan.org/dist/Business-PT-NIF>
 
 =back
+
+=head1 SEE ALSO
+
+http://chemeng.p.lodz.pl/zylla/ut/translation.html#PT
 
 =head1 ACKNOWLEDGEMENTS
 

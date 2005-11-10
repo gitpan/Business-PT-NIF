@@ -13,7 +13,7 @@ Version 0.01
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require Exporter;
 
@@ -72,7 +72,14 @@ sub valid_nif {
     $sum += $_ * chop $nif;
   }
 
-  return $control == 11 - $sum % 11;
+  my $mod = $sum % 11;
+
+  if ($mod) {
+    return $control == 11 - $sum % 11;
+  }
+  else {
+    return $control == 0;
+  }
 }
 
 =head1 AUTHOR

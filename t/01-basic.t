@@ -1,6 +1,6 @@
 #!perl -T
 
-use Test::More tests => 14;
+use Test::More tests => 15;
 
 BEGIN {
 	use_ok( 'Business::PT::NIF', 'valid_nif' );
@@ -22,3 +22,5 @@ ok( ! valid_nif(136695978) );
 ok( ! valid_nif(136695979) );
 
 ok( valid_nif(136695973) );
+
+ok( valid_nif(111111110) );

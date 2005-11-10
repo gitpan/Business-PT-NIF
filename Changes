@@ -1,4 +1,7 @@
 Revision history for Business-PT-NIF
 
+0.02  Thu Nov 10 14:30:00 2005
+        - implemented the exception rule (when the sum % 11 == 0)
+
 0.01  Thu Nov 10 12:24:00 2005
         First version, released on an unsuspecting world.
